@@ -1,0 +1,829 @@
+/* body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    background-color: #444;
+  }
+  
+  nav ul li {
+    padding: 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+   */
+   body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #4A90E2, #9013FE);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .navbar {
+    background-color: #4A90E2;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .navbar-item a {
+    display: block;
+    color: #fff;
+    padding: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-item a:hover {
+    background-color: #9013FE;
+    color: #fff;
+  }
+  
+  .navbar-item.active a {
+    background-color: #50E3C2;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-list {
+      flex-direction: column;
+    }
+  
+    .navbar-item a {
+      padding: 0.75rem;
+    }
+  }
+  
+  .dashboard, .invoice-form, .payment-tracker, .gst-report {
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stat-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 1rem;
+  }
+  
+  form div {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  .payment-tracker {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .payment-tracker h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .payment-tracker div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .payment-tracker label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .payment-tracker select {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .payment-tracker table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .payment-tracker table th,
+  .payment-tracker table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .payment-tracker table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .payment-tracker table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .payment-tracker table tr:hover {
+    background-color: #f1f1f1;
+  }
+  .gst-report {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gst-report h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gst-report form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gst-report form div {
+  margin-bottom: 10px;
+}
+
+.gst-report label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.gst-report input[type="date"] {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.gst-report button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.gst-report button:hover {
+  background-color: #0056b3;
+}
+
+.report-summary {
+  margin-top: 20px;
+}
+
+.report-summary h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.report-summary p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.report-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.report-summary table th,
+.report-summary table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.report-summary table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.report-summary table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.report-summary table tr:hover {
+  background-color: #f1f1f1;
+}
+
+h2, h3, p, label, button {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.gst-report {
+  margin: 20px auto;
+  padding: 20px;
+  background: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.date-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="date"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.report-summary {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.invoices-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoices-table th, .invoices-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.invoices-table th {
+  background: #007bff;
+  color: white;
+}
+
+.invoices-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.invoices-table tr:hover {
+  background: #ddd;
+}
+
+.loading {
+  text-align: center;
+  font-size: 20px;
+  color: #007bff;
+}
+
+/*  */
+/* styles/main.css */
+
+
+.dashboard {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.dashboard-card h3 {
+  margin-bottom: 1rem;
+}
+
+.dashboard-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+}
+.dashboard {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background-color: #e0f7fa;
+  color: #00695c;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.dashboard-card h3 {
+  margin-bottom: 1rem;
+}
+
+.dashboard-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+}
+/* GST Report */
+.gst-report {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+form {
+  flex: 0 0 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.report-summary {
+  flex: 0 0 65%;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 0;
+  margin-left: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.report-summary h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.report-summary p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #34495e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.report-summary p:last-child {
+  border-bottom: none;
+}
+
+.report-summary p span:first-child {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .report-container {
+    flex-direction: column;
+  }
+  
+  form, .report-summary {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+}
+/* main.css */
+
+.payment-tracker {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.payment-tracker h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.payment-tracker div {
+  margin-bottom: 20px;
+}
+
+.payment-tracker label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.payment-tracker select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.payment-tracker table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.payment-tracker th, .payment-tracker td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.payment-tracker th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.payment-tracker tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.payment-tracker tr:hover {
+  background-color: #f1f1f1;
+}
+
+.payment-tracker td {
+  font-size: 14px;
+}
+
+.payment-tracker td:first-child {
+  font-weight: bold;
+}
+
+.payment-tracker td:last-child {
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .payment-tracker {
+    padding: 10px;
+  }
+
+  .payment-tracker table {
+    font-size: 14px;
+  }
+
+  .payment-tracker th, .payment-tracker td {
+    padding: 8px;
+  }
+}
+/* main.css */
+
+.invoice-form {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.invoice-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.invoice-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoice-form div {
+  margin-bottom: 15px;
+}
+
+.invoice-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.invoice-form input, .invoice-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.invoice-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.invoice-form button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  width: 200px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.invoice-form button:hover {
+  background-color: #0056b3;
+}
+
+.invoice-form button:focus {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .invoice-form {
+    padding: 15px;
+  }
+
+  .invoice-form input, .invoice-form textarea {
+    font-size: 14px;
+  }
+
+  .invoice-form button {
+    font-size: 14px;
+  }
+}
+
+/* Customize Toastify styles */
+
+.Toastify__toast-container {
+  z-index: 9999; /* Ensure toast appears on top */
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.Toastify__toast--success {
+  background-color: #28a745; /* Green background for success */
+  color: #fff;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545; /* Red background for error */
+  color: #fff;
+}
+
+.Toastify__toast-body {
+  display: flex;
+  align-items: center;
+}
+
+.Toastify__close-button {
+  color: #fff;
+  font-size: 14px; /* Decrease size of close button */
+  opacity: 0.7;
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  width: 20px;
+  color: #ffffff;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .Toastify__toast {
+    font-size: 14px;
+  }
+
+  .Toastify__close-button {
+    font-size: 12px; /* Smaller close button on small screens */
+  }
+}
+
+
