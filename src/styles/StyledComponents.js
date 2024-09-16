@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-// Global Container with a max-width of 1200px for a centered layout
-
-
 // Dashboard and Main Layout
 export const DashboardContainer = styled.div`
   padding: 40px;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
+  margin-top:15px;
   min-height: 100vh;
   
   @media (max-width: 768px) {
